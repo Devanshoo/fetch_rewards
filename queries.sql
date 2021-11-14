@@ -9,7 +9,7 @@ SELECT EXTRACT(MONTH FROM TIMESTAMP '2021-03-01 18:17:34');
 
 --Sol1:
 
-SELECT ItemList_brandCode, count(ItemList_brandCode) FROM receipts
+SELECT ItemList_brandCode, COUNT(ItemList_brandCode) FROM receipts
 WHERE dateScanned >= '2021-03-01 00:00:00.000' AND dateScanned < '2021-04-01 00:00:00.000'
 GROUP BY ItemList_brandCode
 ORDER BY count(ItemList_brandCode) DESC
@@ -18,7 +18,7 @@ LIMIT 5
 -- How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
 
 --Most recent month
-SELECT ItemList_brandCode, count(ItemList_brandCode) FROM receipts
+SELECT ItemList_brandCode, COUNT(ItemList_brandCode) FROM receipts
 WHERE dateScanned >= '2021-03-01 00:00:00.000' AND dateScanned < '2021-04-01 00:00:00.000'
 GROUP BY ItemList_brandCode
 ORDER BY count(ItemList_brandCode) DESC
